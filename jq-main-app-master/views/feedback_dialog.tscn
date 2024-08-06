@@ -1,0 +1,240 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://views/scripts/feedback_dialog.gd" type="Script" id=2]
+
+[node name="FeedbackDialog" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.960784 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_top = 0.56842
+margin_bottom = 1279.43
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.501
+anchor_top = 0.398
+anchor_right = 0.501
+anchor_bottom = 0.814
+margin_left = -262.839
+margin_top = -0.0527344
+margin_right = 262.161
+margin_bottom = -0.059082
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NotUnderstandableButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_right = 525.0
+margin_bottom = 102.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/NotUnderstandableButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NotUnderstandable" type="Button" parent="Panel/Buttons/NotUnderstandableButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 0.988235, 0.941176, 1 )
+enabled_focus_mode = 0
+text = "Nicht verständlich"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongFormattingButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_top = 106.0
+margin_right = 525.0
+margin_bottom = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/WrongFormattingButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongFormatting" type="Button" parent="Panel/Buttons/WrongFormattingButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 0.988235, 0.941176, 1 )
+enabled_focus_mode = 0
+text = "Text abgeschnitten"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongContentButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_top = 212.0
+margin_right = 525.0
+margin_bottom = 314.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/WrongContentButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongContent" type="Button" parent="Panel/Buttons/WrongContentButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 0.988235, 0.941176, 1 )
+enabled_focus_mode = 0
+text = "Inhaltlicher Fehler"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongLanguageButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_top = 318.0
+margin_right = 525.0
+margin_bottom = 420.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/WrongLanguageButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WrongLanguage" type="Button" parent="Panel/Buttons/WrongLanguageButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 0.988235, 0.941176, 1 )
+enabled_focus_mode = 0
+text = "Sprachlicher Fehler"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbortButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_top = 424.0
+margin_right = 525.0
+margin_bottom = 532.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/AbortButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Abort" type="Button" parent="Panel/Buttons/AbortButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.941176, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 0.988235, 0.941176, 1 )
+enabled_focus_mode = 0
+text = "Abbrechen"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/Buttons/AbortButton"]
+margin_top = 106.0
+margin_right = 525.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChoiceText" type="Label" parent="Panel"]
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.25
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.988235, 0.941176, 1 )
+text = "Diese Frage melden?"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="Panel/Buttons/NotUnderstandableButton/NotUnderstandable" to="." method="_on_NotUnderstandable_button_up"]
+[connection signal="button_up" from="Panel/Buttons/WrongFormattingButton/WrongFormatting" to="." method="_on_WrongFormatting_button_up"]
+[connection signal="button_up" from="Panel/Buttons/WrongContentButton/WrongContent" to="." method="_on_WrongContent_button_up"]
+[connection signal="button_up" from="Panel/Buttons/WrongLanguageButton/WrongLanguage" to="." method="_on_WrongLanguage_button_up"]
+[connection signal="button_up" from="Panel/Buttons/AbortButton/Abort" to="." method="_on_Abort_button_up"]

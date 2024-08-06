@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Backgrounds/bg_high.png" type="Texture" id=2]
+[ext_resource path="res://views/scripts/contact_form.gd" type="Script" id=3]
+[ext_resource path="res://scripts/keyboard_translation.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="ContactForm" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyboardTranslation" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+max_keyboard_height = 395.0
+
+[node name="Tween" type="Tween" parent="KeyboardTranslation"]
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_top = 0.56842
+margin_bottom = 1279.43
+rect_pivot_offset = Vector2( -582.448, 814.672 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.223
+anchor_right = 0.5
+anchor_bottom = 0.288
+margin_left = -350.0
+margin_right = 350.0
+margin_bottom = -0.126129
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Wir freuen uns, von dir zu hören! Was möchtest du uns sagen?"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.325
+anchor_right = 0.5
+anchor_bottom = 0.761
+margin_left = -344.0
+margin_top = -3.05176e-05
+margin_right = 344.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/selection_color = Color( 0.792157, 0.792157, 0.792157, 1 )
+custom_colors/caret_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/background_color = Color( 1, 1, 1, 1 )
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.897
+anchor_right = 0.5
+anchor_bottom = 0.897
+margin_left = -350.0
+margin_top = -108.0
+margin_right = 350.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer2"]
+margin_left = 40.0
+margin_right = 340.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="Panel/HBoxContainer2/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="Back" type="Button" parent="Panel/HBoxContainer2/VBoxContainer"]
+margin_top = 6.0
+margin_right = 300.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "Zurück"
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/HBoxContainer2/VBoxContainer"]
+margin_top = 106.0
+margin_right = 300.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer2"]
+margin_left = 360.0
+margin_right = 660.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="Panel/HBoxContainer2/VBoxContainer2"]
+margin_right = 300.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="Send" type="Button" parent="Panel/HBoxContainer2/VBoxContainer2"]
+margin_top = 6.0
+margin_right = 300.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "Absenden"
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/HBoxContainer2/VBoxContainer2"]
+margin_top = 106.0
+margin_right = 300.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[connection signal="button_up" from="Panel/HBoxContainer2/VBoxContainer/Back" to="." method="_on_Back_button_up"]
+[connection signal="button_up" from="Panel/HBoxContainer2/VBoxContainer2/Send" to="." method="_on_Send_button_up"]

@@ -1,0 +1,49 @@
+image: barichello/godot-ci:3.4.4
+
+variables:
+  EXPORT_NAME: jannahquiz
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  - export
+  - deploy
+
+web:
+  stage: export
+  script:
+    - mkdir -v -p build/web
+    - godot -v --export "HTML5" ./build/web/index.html
+  artifacts:
+    name: $EXPORT_NAME-$CI_JOB_NAME
+    paths:
+      - build/web
+  only:
+   - master    
+
+android:
+  stage: export
+  script:
+    - mkdir -v -p build/android
+    - godot -v --export-debug "Android" ./build/android/$EXPORT_NAME-debug.apk
+  artifacts:
+    name: $EXPORT_NAME-$CI_JOB_NAME
+    paths:
+      - build/android
+  only:
+   - master    
+
+pages:
+  stage: deploy
+  dependencies:
+    - web
+    - android
+  script:
+    - rm -rf public
+    - cp -r build/web public
+    - mkdir public/android
+    - cp build/android/$EXPORT_NAME-debug.apk public/android
+  artifacts:
+    paths:
+      - public
+  only:
+   - master

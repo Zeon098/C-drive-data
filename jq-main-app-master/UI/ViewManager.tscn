@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/view_manager.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/view_animator.gd" type="Script" id=3]
+
+[node name="ViewManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Blocker" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Blocker"]
+anchor_top = 0.33
+anchor_right = 1.0
+anchor_bottom = 0.5
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.890196, 0.882353, 0.882353, 1 )
+text = "Blocking message"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ViewAnimator" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowViewTween" type="Tween" parent="ViewAnimator"]
+
+[node name="HideViewTween" type="Tween" parent="ViewAnimator"]
+
+[node name="BlockTween" type="Tween" parent="."]

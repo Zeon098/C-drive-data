@@ -1,0 +1,183 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Backgrounds/bg_high.png" type="Texture" id=1]
+[ext_resource path="res://UI/logo-jannah-quiz.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/JannahQuizTheme.tres" type="Theme" id=4]
+[ext_resource path="res://views/scripts/chose_name.gd" type="Script" id=5]
+[ext_resource path="res://scripts/keyboard_translation.gd" type="Script" id=6]
+
+[node name="ChoseName" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Background"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 27.0
+margin_top = -470.0
+margin_right = -5.0
+margin_bottom = 119.0
+texture = ExtResource( 2 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+ratio = 0.563
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 0.56842
+margin_right = 720.0
+margin_bottom = 1279.43
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -529.863
+margin_right = -10.0
+margin_bottom = -172.863
+size_flags_horizontal = 0
+custom_constants/separation = 30
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Panel/VBoxContainer"]
+margin_top = 29.0
+margin_right = 700.0
+margin_bottom = 218.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Panel/VBoxContainer/VBoxContainer"]
+margin_right = 700.0
+margin_bottom = 83.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Fast geschafft. Wähle noch einen Namen aus!"
+autowrap = true
+
+[node name="LineEdit" type="LineEdit" parent="AspectRatioContainer/Panel/VBoxContainer/VBoxContainer"]
+margin_top = 93.0
+margin_right = 700.0
+margin_bottom = 189.0
+rect_min_size = Vector2( 0, 96 )
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+placeholder_text = "Name"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AspectRatioContainer/Panel/VBoxContainer"]
+margin_top = 248.0
+margin_right = 700.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 40.0
+margin_right = 340.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="Cancel" type="Button" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 6.0
+margin_right = 300.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "Abbrechen"
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 106.0
+margin_right = 300.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 360.0
+margin_right = 660.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_right = 300.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="Send" type="Button" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 6.0
+margin_right = 300.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "Absenden"
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 106.0
+margin_right = 300.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="KeyboardTranslation" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="KeyboardTranslation"]
+
+[connection signal="button_up" from="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer/Cancel" to="." method="_on_Cancel_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/Panel/VBoxContainer/HBoxContainer2/VBoxContainer2/Send" to="." method="_on_Send_button_up"]

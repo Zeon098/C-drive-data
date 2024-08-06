@@ -1,0 +1,160 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Backgrounds/bg_high.png" type="Texture" id=2]
+[ext_resource path="res://views/scripts/options.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+ratio = 0.563
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 0.56842
+margin_right = 720.0
+margin_bottom = 1279.43
+
+[node name="Buttons" type="VBoxContainer" parent="AspectRatioContainer/Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 98.0
+margin_top = -111.432
+margin_right = -97.0
+margin_bottom = 208.568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TermsButton" type="VBoxContainer" parent="AspectRatioContainer/Panel/Buttons"]
+margin_right = 525.0
+margin_bottom = 102.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/Panel/Buttons/TermsButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Terms" type="Button" parent="AspectRatioContainer/Panel/Buttons/TermsButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "AGB"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DifficultyButton" type="VBoxContainer" parent="AspectRatioContainer/Panel/Buttons"]
+margin_top = 106.0
+margin_right = 525.0
+margin_bottom = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/Panel/Buttons/DifficultyButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Schwierigkeit" type="Button" parent="AspectRatioContainer/Panel/Buttons/DifficultyButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "Schwierigkeit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="VBoxContainer" parent="AspectRatioContainer/Panel/Buttons"]
+margin_top = 212.0
+margin_right = 525.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/Panel/Buttons/BackButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="AspectRatioContainer/Panel/Buttons/BackButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "Zurück"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="AspectRatioContainer/Panel/Buttons/BackButton"]
+margin_top = 106.0
+margin_right = 525.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="AspectRatioContainer/Panel/Buttons/TermsButton/Terms" to="." method="_on_Terms_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/Panel/Buttons/DifficultyButton/Schwierigkeit" to="." method="_on_Schwierigkeit_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/Panel/Buttons/BackButton/Back" to="." method="_on_Back_button_up"]

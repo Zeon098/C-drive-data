@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "27399198234",
+    "project_id": "kamerat-929a2",
+    "storage_bucket": "kamerat-929a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27399198234:android:f4701de221d8f39c2023a3",
+        "android_client_info": {
+          "package_name": "de.kamerat.kamerat_flutter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7XUk1pDxiiV6gvvXdOhOynmrk13JTcCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/JannahQuizTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/UI_font_big.tres" type="DynamicFont" id=3]
+[ext_resource path="res://views/scripts/onboarding2.gd" type="Script" id=4]
+[ext_resource path="res://Backgrounds/bg_high.png" type="Texture" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+ratio = 0.563
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 0.56842
+margin_right = 720.0
+margin_bottom = 1279.43
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Panel"]
+anchor_top = 0.245
+anchor_right = 1.0
+anchor_bottom = 0.635
+margin_left = 50.0
+margin_right = -50.0
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Bitte melde dich mit deiner E-Mail Adresse an. Dadurch erhälst du die Wiederherstellung deines Accounts, Jannah Punkte und Teilnahme an Highscore Liste."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="AspectRatioContainer/Panel"]
+margin_left = 50.0
+margin_top = 900.0
+margin_right = 670.0
+margin_bottom = 996.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "Anmelden"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skip" type="Button" parent="AspectRatioContainer/Panel"]
+margin_left = 50.0
+margin_top = 1034.86
+margin_right = 670.0
+margin_bottom = 1130.86
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_pressed = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_fonts/font = ExtResource( 2 )
+enabled_focus_mode = 0
+text = "Überspringen"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="AspectRatioContainer/Panel/Continue" to="." method="_on_Continue_button_up"]
+[connection signal="button_up" from="AspectRatioContainer/Panel/Skip" to="." method="_on_Skip_button_up"]

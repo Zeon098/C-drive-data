@@ -1,0 +1,148 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "TextureButton",
+"class": "AnswerButton",
+"language": "GDScript",
+"path": "res://scripts/answer_button.gd"
+}, {
+"base": "Reference",
+"class": "Appender",
+"language": "GDScript",
+"path": "res://addons/gs_logger/appender.gd"
+}, {
+"base": "Node",
+"class": "ClientApiRequest",
+"language": "GDScript",
+"path": "res://scripts/client_api_request.gd"
+}, {
+"base": "Appender",
+"class": "ConsoleAppender",
+"language": "GDScript",
+"path": "res://addons/gs_logger/appenders/console_appender.gd"
+}, {
+"base": "TextureProgress",
+"class": "DifficultyProgress",
+"language": "GDScript",
+"path": "res://views/scripts/difficulty_progress.gd"
+}, {
+"base": "Appender",
+"class": "FileAppender",
+"language": "GDScript",
+"path": "res://addons/gs_logger/appenders/file_appender.gd"
+}, {
+"base": "Layout",
+"class": "HtmlLayout",
+"language": "GDScript",
+"path": "res://addons/gs_logger/layouts/html_layout.gd"
+}, {
+"base": "Reference",
+"class": "Layout",
+"language": "GDScript",
+"path": "res://addons/gs_logger/layout.gd"
+}, {
+"base": "Reference",
+"class": "Message",
+"language": "GDScript",
+"path": "res://addons/gs_logger/message.gd"
+}, {
+"base": "Layout",
+"class": "PatternLayout",
+"language": "GDScript",
+"path": "res://addons/gs_logger/layouts/pattern_layout.gd"
+}, {
+"base": "Reference",
+"class": "RoundData",
+"language": "GDScript",
+"path": "res://scripts/round_data.gd"
+}, {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://addons/gs_logger/utils.gd"
+}, {
+"base": "Node",
+"class": "ViewAnimator",
+"language": "GDScript",
+"path": "res://scripts/view_animator.gd"
+} ]
+_global_script_class_icons={
+"AnswerButton": "",
+"Appender": "",
+"ClientApiRequest": "",
+"ConsoleAppender": "",
+"DifficultyProgress": "",
+"FileAppender": "",
+"HtmlLayout": "",
+"Layout": "",
+"Message": "",
+"PatternLayout": "",
+"RoundData": "",
+"Utils": "",
+"ViewAnimator": ""
+}
+
+[application]
+
+config/name="Jannah Quiz App"
+run/main_scene="res://views/onboarding1.tscn"
+boot_splash/image="res://UI/splash-jannah-quiz.png"
+boot_splash/bg_color=Color( 0.992157, 0.988235, 0.941176, 1 )
+config/icon="res://UI/AppIcon.png"
+
+[autoload]
+
+ClientAPI="*res://ClientAPI/client_api.tscn"
+ViewManager="*res://UI/ViewManager.tscn"
+Logger="*res://addons/gs_logger/logger.gd"
+PlayerData="*res://scripts/player_data.gd"
+GameData="*res://scripts/game_data.gd"
+HighscoreLoader="*res://scripts/highscore_loader.gd"
+QuestionStats="*res://scripts/question_stats.gd"
+QuestionLoader="*res://scripts/question_loader.gd"
+AudioEngine="*res://audio/audio_engine.tscn"
+
+[display]
+
+window/size/width=720
+window/size/height=1280
+window/size/test_width=360
+window/size/test_height=640
+window/dpi/allow_hidpi=true
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/gs_logger/plugin.cfg" )
+
+[global]
+
+touch=false
+emul=false
+emulate=false
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+vram_compression/import_pvrtc=true
+environment/default_environment="res://default_env.tres"

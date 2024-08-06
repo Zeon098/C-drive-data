@@ -1,0 +1,236 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Backgrounds/bg_high.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://views/scripts/main_menu.gd" type="Script" id=3]
+[ext_resource path="res://UI/difficulty_fg.png" type="Texture" id=4]
+[ext_resource path="res://UI/difficulty_bg.png" type="Texture" id=5]
+[ext_resource path="res://views/scripts/difficulty_progress.gd" type="Script" id=6]
+[ext_resource path="res://Fonts/UI_font_bold.tres" type="DynamicFont" id=7]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_top = 0.56842
+margin_bottom = 1279.43
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerData" type="Label" parent="Panel"]
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.25
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Spielername
+Jannah Punkte"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.333
+anchor_right = 0.5
+anchor_bottom = 0.371
+margin_left = -138.24
+margin_right = -138.24
+margin_bottom = -48.5968
+rect_scale = Vector2( 0.8, 0.8 )
+max_value = 10.0
+step = 0.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.501
+anchor_top = 0.487
+anchor_right = 0.501
+anchor_bottom = 0.82
+margin_left = -262.839
+margin_right = 262.161
+margin_bottom = 0.160034
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_right = 525.0
+margin_bottom = 102.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/PlayButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Panel/Buttons/PlayButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_pressed = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_fonts/font = ExtResource( 2 )
+enabled_focus_mode = 0
+text = "Spiel Starten"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoreButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_top = 106.0
+margin_right = 525.0
+margin_bottom = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/HighscoreButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore" type="Button" parent="Panel/Buttons/HighscoreButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_pressed = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_fonts/font = ExtResource( 2 )
+enabled_focus_mode = 0
+text = "Highscore"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContactButton" type="VBoxContainer" parent="Panel/Buttons"]
+margin_top = 212.0
+margin_right = 525.0
+margin_bottom = 314.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/ContactButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contact" type="Button" parent="Panel/Buttons/ContactButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_pressed = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_fonts/font = ExtResource( 2 )
+enabled_focus_mode = 0
+text = "Kontakt"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="VBoxContainer" parent="Panel/Buttons"]
+margin_top = 318.0
+margin_right = 525.0
+margin_bottom = 426.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Buttons/Options"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="Panel/Buttons/Options"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_pressed = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_fonts/font = ExtResource( 2 )
+enabled_focus_mode = 0
+text = "Optionen"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/Buttons/Options"]
+margin_top = 106.0
+margin_right = 525.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VersionLabel" type="Label" parent="Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -60.0
+margin_right = 40.0
+custom_colors/font_color = Color( 0.282353, 0.282353, 0.282353, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "V 2.0.1"
+
+[connection signal="button_up" from="Panel/Buttons/PlayButton/Play" to="." method="_on_Play_button_up"]
+[connection signal="button_up" from="Panel/Buttons/HighscoreButton/Highscore" to="." method="_on_Highscore_button_up"]
+[connection signal="button_up" from="Panel/Buttons/ContactButton/Contact" to="." method="_on_Contact_button_up"]
+[connection signal="button_up" from="Panel/Buttons/Options/Options" to="." method="_on_Options_button_up"]

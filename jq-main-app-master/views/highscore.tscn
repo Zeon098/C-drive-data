@@ -1,0 +1,552 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Fonts/UI_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Backgrounds/bg_high.png" type="Texture" id=2]
+[ext_resource path="res://UI/JannahQuizTheme.tres" type="Theme" id=3]
+[ext_resource path="res://views/scripts/highscore.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/UI_font_bold.tres" type="DynamicFont" id=5]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0.588235 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 0.588235 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 0.588235 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.623529, 0.309804, 0.647059, 0 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 0.588235 )
+
+[node name="Highscore" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+font_regular = ExtResource( 1 )
+font_bold = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+ratio = 0.563
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 0.56842
+margin_right = 720.0
+margin_bottom = 1279.43
+rect_pivot_offset = Vector2( -582.448, 814.672 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/Panel"]
+margin_left = 75.0
+margin_top = 234.0
+margin_right = 656.0
+margin_bottom = 274.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocationButton" type="OptionButton" parent="AspectRatioContainer/Panel/HBoxContainer"]
+margin_right = 250.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 250, 50 )
+rect_pivot_offset = Vector2( -576.582, 367.351 )
+theme = ExtResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_constants/arrow_margin = 0
+text = "Top Ten"
+items = [ "Top Ten", null, false, 0, null, "Mein Score", null, false, 1, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Panel/HBoxContainer"]
+margin_left = 270.0
+margin_top = 5.0
+margin_right = 311.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "für"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeButton" type="OptionButton" parent="AspectRatioContainer/Panel/HBoxContainer"]
+margin_left = 331.0
+margin_right = 581.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 250, 50 )
+rect_pivot_offset = Vector2( -576.582, 367.351 )
+theme = ExtResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_constants/arrow_margin = 0
+text = "alle Zeiten"
+items = [ "alle Zeiten", null, false, 0, null, "diese Woche", null, false, 1, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entries" type="VBoxContainer" parent="AspectRatioContainer/Panel"]
+anchor_left = 0.047
+anchor_top = 0.261
+anchor_right = 0.953
+anchor_bottom = 0.78
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry1" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_right = 652.0
+margin_bottom = 40.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry1"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry1"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry1"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry2" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 50.0
+margin_right = 652.0
+margin_bottom = 90.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry2"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry2"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry2"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry3" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 100.0
+margin_right = 652.0
+margin_bottom = 140.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry3"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry3"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry3"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry4" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 150.0
+margin_right = 652.0
+margin_bottom = 190.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry4"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry4"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry4"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry5" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 200.0
+margin_right = 652.0
+margin_bottom = 240.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry5"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry5"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry5"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry6" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 250.0
+margin_right = 652.0
+margin_bottom = 290.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry6"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry6"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry6"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry7" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 300.0
+margin_right = 652.0
+margin_bottom = 340.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry7"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry7"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry7"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry8" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 350.0
+margin_right = 652.0
+margin_bottom = 390.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry8"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry8"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry8"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry9" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 400.0
+margin_right = 652.0
+margin_bottom = 440.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry9"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry9"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry9"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entry10" type="HBoxContainer" parent="AspectRatioContainer/Panel/Entries"]
+margin_top = 450.0
+margin_right = 652.0
+margin_bottom = 490.0
+
+[node name="Rank" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry10"]
+margin_right = 48.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry10"]
+margin_left = 52.0
+margin_right = 496.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="AspectRatioContainer/Panel/Entries/Entry10"]
+margin_left = 500.0
+margin_right = 652.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="VBoxContainer" parent="AspectRatioContainer/Panel"]
+anchor_left = 0.15
+anchor_top = 0.897
+anchor_right = 0.85
+anchor_bottom = 0.897
+margin_top = -108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/Panel/BackButton"]
+margin_right = 525.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[node name="Back" type="Button" parent="AspectRatioContainer/Panel/BackButton"]
+margin_top = 6.0
+margin_right = 525.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 525, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.447059, 0.419608, 1 )
+custom_colors/font_color_hover = Color( 0.160784, 0.447059, 0.419608, 1 )
+enabled_focus_mode = 0
+text = "Zurück"
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="AspectRatioContainer/Panel/BackButton"]
+margin_top = 106.0
+margin_right = 525.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 0.160784, 0.447059, 0.419608, 1 )
+
+[connection signal="item_selected" from="AspectRatioContainer/Panel/HBoxContainer/LocationButton" to="." method="_on_LocationButton_item_selected"]
+[connection signal="item_selected" from="AspectRatioContainer/Panel/HBoxContainer/TimeButton" to="." method="_on_TimeButton_item_selected"]
+[connection signal="button_up" from="AspectRatioContainer/Panel/BackButton/Back" to="." method="_on_Back_button_up"]
